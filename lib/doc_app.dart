@@ -1,29 +1,29 @@
+import 'package:appointment_app/core/routing/app_router.dart';
+import 'package:appointment_app/core/routing/routes.dart';
+import 'package:appointment_app/core/theming/color.dart'; // Ensure this path is correct
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DocApp extends StatefulWidget {
+class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
-  final String appRouter;
+  final AppRouter appRouter;
 
-  @override
-  State<DocApp> createState() => _DocAppState();
-}
-
-class _DocAppState extends State<DocApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(360, 690),  // Ensure the designSize is correct for your app
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
+      builder: (_, __) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        initialRoute: Routes.onBoardingScreen,
         title: 'First Method',
+        onGenerateRoute:AppRouter.generateRoute,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          primaryColor: ColorManager.mainColor,
+          scaffoldBackgroundColor: Colors.white,
         ),
-        home: const HomePage(title: 'First Method'),
+        // Add `const` if `OnBoardingScreen` is stateless
       ),
     );
   }
