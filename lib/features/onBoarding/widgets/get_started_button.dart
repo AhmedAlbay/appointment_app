@@ -17,7 +17,7 @@ class GetStartedButton extends StatelessWidget {
           ),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: WidgetStateProperty.all(
-            Size(double.infinity, 52),
+            const Size(   double.infinity, 52),
           ),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
@@ -32,7 +32,7 @@ class GetStartedButton extends StatelessWidget {
         },
         child: Text(
           "Get Started",
-          style: TextStyles.font24White600Weight,
+          style: TextStyles.font24WhiteSemiBold,
         ));
   }
 }

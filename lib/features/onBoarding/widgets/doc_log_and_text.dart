@@ -14,7 +14,7 @@ class DocLogAndText extends StatelessWidget {
    
        SvgPicture.asset("assets/svgs/doc_log.svg") ,
        SizedBox(width: 10.h,),
-       Text("Docdoc"  ,style: TextStyles.font24Black700Weight,),
+       Text("Docdoc"  ,style: TextStyles.font24BlackBold,),
       ],
     );
   }
