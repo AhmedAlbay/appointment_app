@@ -29,7 +29,7 @@ class TextStyles {
    static TextStyle font14greyMedium =TextStyle(
     fontSize: 14.sp ,
     fontWeight: FontWeightHelper.regular,
-    color: ColorManager.darkGray ,
+    color: ColorManager.darkBlue ,
   );
    static TextStyle font24WhiteSemiBold =TextStyle(
     fontSize: 24.sp ,
@@ -54,11 +54,21 @@ class TextStyles {
    static TextStyle font12DarkBlueRegular =TextStyle(
     fontSize: 12.sp ,
     fontWeight: FontWeightHelper.regular,
-    color: ColorManager.darkGray,
+    color: ColorManager.darkBlue,
   );
    static TextStyle font12MainBlueRegular =TextStyle(
     fontSize: 12.sp ,
     fontWeight: FontWeightHelper.regular,
     color: ColorManager.mainColor,
+  );
+    static TextStyle font15DarkBlueMeduim =TextStyle(
+    fontSize: 15.sp ,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorManager.darkBlue,
+  );
+      static TextStyle font14kBlueSemiBold =TextStyle(
+    fontSize: 14.sp ,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.blue,
   );
 }
