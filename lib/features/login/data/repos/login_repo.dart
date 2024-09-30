@@ -3,7 +3,6 @@ import 'package:appointment_app/core/networking/api_result.dart';
 import 'package:appointment_app/core/networking/api_service.dart';
 import 'package:appointment_app/features/login/data/model/login_request_body.dart';
 import 'package:appointment_app/features/login/data/model/login_response.dart';
-import 'package:dio/dio.dart';
 
 class LoginRepo {
   final ApiService _apiService;
