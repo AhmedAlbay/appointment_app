@@ -15,7 +15,7 @@ class AppTextFormFiled extends StatelessWidget {
     this.controller,
     this.isObscureText,
     this.hintStyle,
-    this.inputStyle,
+    this.inputStyle, this.keyboardType,
   });
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
@@ -27,11 +27,14 @@ class AppTextFormFiled extends StatelessWidget {
   final TextStyle? inputStyle;
   final Function(String?) vaildator;
   final TextEditingController? controller;
+  final  TextInputType? keyboardType;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
         controller: controller,
+        keyboardType: keyboardType,
         obscureText: isObscureText ?? false,
         decoration: InputDecoration(
           filled: true,
