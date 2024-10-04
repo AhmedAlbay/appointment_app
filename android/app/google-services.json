@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434155743054",
+    "project_id": "flutter-appdistrubtion",
+    "storage_bucket": "flutter-appdistrubtion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434155743054:android:88a7b6344d691f28eda01f",
+        "android_client_info": {
+          "package_name": "com.example.appointment_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSkccbYAlHvorAWnE6Vg1KfS08gI3W6So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
