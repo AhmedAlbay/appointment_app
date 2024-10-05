@@ -28,16 +28,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.3.5'
-        bundler-cache: true
+        bundler-cache: trues
         working-directory: android
-
-    - name: Install Bundler (Explicit)
-      run: gem install bundler
-      working-directory: android
-
-    - name: Install Dependencies
-      run: bundle install
-      working-directory: android
 
     - name: Build and Distribute App
       env:
