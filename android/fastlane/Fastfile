@@ -13,7 +13,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: "aalby302@gmail.com",                      # Testers to receive the build
-      release_notes: "First App upload by Fastlane"          # Release notes for testers
+      release_notes: "second release"          # Release notes for testers
     )
   end
 end
