@@ -1,19 +1,19 @@
 default_platform(:android)
 
 platform :android do
-  desc "lane for Android Flutter App Distribution"
+  desc "Lane for Android Flutter App Distribution"
   lane :flutter_distribution do
     sh "flutter clean"
     sh "flutter build apk --release --flavor Production -t lib/main_production.dart"
 
     # Firebase app distribution
     firebase_app_distribution(
-      app: "1:434155743054:android:88a7b6344d691f28eda01f",  # Your Firebase app ID
-      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],         # Make sure this is valid
+      app: "1:434155743054:android:88a7b6344d691f28eda01f",  # Firebase app ID
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],         # Ensure this token is valid
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-      testers: "aalby302@gmail.com",                      # Testers to receive the build
-      release_notes: "second release"          # Release notes for testers
+      testers: "aalby302@gmail.com",                        # Testers to receive the build
+      release_notes: "second release"                       # Release notes
     )
   end
 end
