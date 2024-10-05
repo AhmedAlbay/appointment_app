@@ -9,7 +9,7 @@ platform :android do
     # Firebase app distribution
     firebase_app_distribution(
       app: "1:434155743054:android:88a7b6344d691f28eda01f",  # Your Firebase app ID
-      firebase_cli_token: "1//03ACeKgdo9gSzCgYIARAAGAMSNwF-L9Ir66kTdIsNGyBktwnyAkbFUhGjSGoguJa5QzzWiMExi1le7V0arWVWS5_Zr2n7FawlU6o",         # Make sure this is valid
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],         # Make sure this is valid
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: "aalby302@gmail.com",                      # Testers to receive the build

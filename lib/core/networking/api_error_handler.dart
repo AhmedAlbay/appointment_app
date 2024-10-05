@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names, unreachable_switch_case
+
 import 'package:dio/dio.dart';
 
 import 'api_constants.dart';
