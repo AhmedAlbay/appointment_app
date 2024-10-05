@@ -43,5 +43,5 @@ jobs:
       env:
         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
       run: |
-        bundle exec fastlane android flutter_distribution
+        fastlane --verbose android flutter_distribution
       working-directory: android
