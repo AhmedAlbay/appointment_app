@@ -1,4 +1,5 @@
 name: "Android Fastlane with Flutter Firebase Distribution"
+
 on:
   push:
     branches:
@@ -29,6 +30,14 @@ jobs:
         ruby-version: '3.3.5'
         bundler-cache: true
         working-directory: android
+
+    - name: Install Bundler (Explicit)
+      run: gem install bundler
+      working-directory: android
+
+    - name: Install Dependencies
+      run: bundle install
+      working-directory: android
 
     - name: Build and Distribute App
       env:
