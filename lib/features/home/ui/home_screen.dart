@@ -1,3 +1,4 @@
+import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_text.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_blue_container.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ class HomeScreen extends StatelessWidget {
               height: 16.h,
             ),
             HomeBlueContainer(),
+            SizedBox(height:24.h),
+            DoctorSpecialityText(),
           ],
         ),
       )),
