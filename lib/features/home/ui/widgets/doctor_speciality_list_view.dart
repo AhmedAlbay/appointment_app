@@ -15,10 +15,10 @@ class DoctorSpecialityListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 8,
         
-        itemBuilder: (context, item) {
+        itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsetsDirectional.only(
-              start: item == 0 ? 0 : 25.w,
+              start: index == 0 ? 0 : 25.w,
             ),
             child: Column(
               children: [

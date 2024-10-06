@@ -1,3 +1,4 @@
+import 'package:appointment_app/features/home/ui/widgets/doctor_list_view.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_list_view.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_text.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_blue_container.dart';
@@ -32,6 +33,8 @@ class HomeScreen extends StatelessWidget {
             DoctorSpecialityText(),
             SizedBox(height: 16.h),
             DoctorSpecialityListView(),
+            SizedBox(height: 22.h,),
+            DoctorListView(),
           ],
         ),
       )),
