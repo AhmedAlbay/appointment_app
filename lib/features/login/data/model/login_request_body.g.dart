@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: unused_element
-
 part of 'login_request_body.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: unused_element
 LoginRequestBody _$LoginRequestBodyFromJson(Map<String, dynamic> json) =>
     LoginRequestBody(
       email: json['email'] as String,
