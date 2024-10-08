@@ -1,6 +1,5 @@
-import 'package:appointment_app/features/home/ui/widgets/doctor_list_view.dart';
-import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_list_view.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_text.dart';
+import 'package:appointment_app/features/home/ui/widgets/get_doctor_specialization_bloc_builder.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_blue_container.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -13,31 +12,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Container(
-        margin: EdgeInsets.fromLTRB(
-          20.w,
-          16.h,
-          20.w,
-          28.h,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 28.h),
+          width: double.infinity,
+          color: Colors.white,
+          child: Column(
+            children: [
+              HomeTopBar(),
+              SizedBox(height: 16.h),
+              HomeBlueContainer(),
+              SizedBox(height: 24.h),
+              DoctorSpecialityText(),
+              SizedBox(height: 16.h),
+              GetDoctorSpecializationBlocBuilder(),
+            ],
+          ),
         ),
-        width: double.infinity,
-        color: Colors.white,
-        child: Column(
-          children: [
-            HomeTopBar(),
-            SizedBox(
-              height: 16.h,
-            ),
-            HomeBlueContainer(),
-            SizedBox(height: 24.h),
-            DoctorSpecialityText(),
-            SizedBox(height: 16.h),
-            DoctorSpecialityListView(),
-            SizedBox(height: 22.h,),
-            DoctorListView(),
-          ],
-        ),
-      )),
+      ),
     );
   }
 }
+

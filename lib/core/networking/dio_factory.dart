@@ -13,19 +13,27 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
-        addDioInterceptor();
-        return dio!;
-
-    }else{
-      return dio!; 
-
+      addDioInterceptor();
+      addDioHeader();
+      return dio!;
+    } else {
+      return dio!;
     }
   }
-  static void  addDioInterceptor() {
-  dio?.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseHeader: true,));
 
-}
+  static void addDioHeader() {
+    dio?.options.headers = {
+      'Accept': 'application/json',
+      'Authorization':
+          'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzI4MzkzNjgxLCJleHAiOjE3Mjg0ODAwODEsIm5iZiI6MTcyODM5MzY4MSwianRpIjoiZVhPcThRMExUbm5pbjlHUiIsInN1YiI6IjIzMjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.xxCmqXuNqCinaLoZ65P878OQjTOlL-LscdkYIlwiKs8'
+    };
+  }
+
+  static void addDioInterceptor() {
+    dio?.interceptors.add(PrettyDioLogger(
+      requestHeader: true,
+      requestBody: true,
+      responseHeader: true,
+    ));
+  }
 }

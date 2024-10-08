@@ -1,5 +1,6 @@
 import 'package:appointment_app/core/di/dependency_injecton.dart';
 import 'package:appointment_app/core/routing/routes.dart';
+import 'package:appointment_app/features/home/logic/home_cubit.dart';
 import 'package:appointment_app/features/home/ui/home_screen.dart';
 import 'package:appointment_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_screen.dart';
@@ -27,12 +28,19 @@ class AppRouter {
                   child: const SignUpScreen(),
                 ));
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => HomeCubit(getIt())..getSpecializations(),
+                  child: const HomeScreen(),
+                ));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
+            appBar: AppBar(
+              title: const Text('Page Not Found'),
+            ),
+            body: const Center(
+              child: Text('The page you are looking for does not exist.'),
             ),
           ),
         );
