@@ -1,3 +1,4 @@
+import 'package:appointment_app/core/helpers/constants.dart';
 import 'package:appointment_app/core/routing/app_router.dart';
 import 'package:appointment_app/core/routing/routes.dart';
 import 'package:appointment_app/core/theming/color.dart'; // Ensure this path is correct
@@ -16,7 +17,7 @@ class DocApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, __) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: isLoggedUser ?Routes.homeScreen :Routes.loginScreen,
         title: 'First Method',
         onGenerateRoute:AppRouter.generateRoute,
         theme: ThemeData(
