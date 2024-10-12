@@ -27,7 +27,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${await SharedPrefHelper.getString(SharedPreKey.userToken)}'
+          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPreKey.userToken)}'
     };
   }
   static void setTokenAfterLogin(String token){
