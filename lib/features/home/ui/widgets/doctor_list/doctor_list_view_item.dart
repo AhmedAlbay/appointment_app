@@ -1,8 +1,11 @@
+import 'package:appointment_app/core/theming/color.dart';
 import 'package:appointment_app/core/theming/text_styles.dart';
 import 'package:appointment_app/features/home/data/model/specializations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
+import 'package:shimmer/shimmer.dart';
 class DoctorListViewItem extends StatelessWidget {
   const DoctorListViewItem({super.key, required this.doctorModel});
   
@@ -14,13 +17,35 @@ class DoctorListViewItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16.r),
-            child: Image.network(
-              width: 118.w,
+      CachedNetworkImage(
+            imageUrl:
+                "https://static.wikia.nocookie.net/five-world-war/images/6/64/Hisoka.jpg/revision/latest?cb=20190313114050",
+            progressIndicatorBuilder: (context, url, downloadProgress) {
+              return Shimmer.fromColors(
+                baseColor: ColorManager.lightGray,
+                highlightColor: Colors.white,
+                child: Container(
+                  width: 110.w,
+                  height: 120.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.white,
+                  ),
+                ),
+              );
+            },
+            imageBuilder: (context, imageProvider) => Container(
+              width: 110.w,
               height: 120.h,
-              "https://pbs.twimg.com/profile_images/1526943595743305729/f3GAlT6Y_400x400.jpg",
-              fit: BoxFit.cover,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(12.0),
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           SizedBox(

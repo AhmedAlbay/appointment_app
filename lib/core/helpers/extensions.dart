@@ -20,3 +20,8 @@ extension StringExtension on String?{
 bool isNullorEmpty() => this ==null ||this =="";
 
 } 
+extension ListExtension<T> on List<T>?{
+
+bool isNullorEmpty() => this ==null ||this!.isEmpty;
+
+} 

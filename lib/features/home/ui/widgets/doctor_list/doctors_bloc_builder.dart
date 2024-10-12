@@ -1,13 +1,13 @@
 import 'package:appointment_app/core/theming/color.dart';
 import 'package:appointment_app/features/home/logic/home_cubit.dart';
 import 'package:appointment_app/features/home/logic/home_state.dart';
-import 'package:appointment_app/features/home/ui/widgets/specializations_list/speciality_list_view.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctor_list/doctor_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SpecializationBlocBuilder extends StatelessWidget {
-  const SpecializationBlocBuilder({
+class DoctorsBlocBuilder extends StatelessWidget {
+  const DoctorsBlocBuilder({
     super.key,
   });
 
@@ -15,19 +15,14 @@ class SpecializationBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is SpecializationsLoading ||
-          current is SpecializationsSuccess ||
-          current is SpecializationsError,
+          current is DoctorSuccess || current is DoctorError,
       builder: (context, state) {
         return state.maybeWhen(
-          specializationsLoading: () {
-            return setupLoading();
+          doctorSuccess: (doctorsList) {
+            var doctorList = doctorsList ?? [];
+            return setupSuccess(doctorList);
           },
-          specializationsSuccess: (specializationData) {
-            var specializationDataList = specializationData ?? [];
-            return setupSuccess(specializationDataList);
-          },
-          specializationsError: (errorhandler) {
+          doctorError: (errorhandler) {
             return setupError(); // You can show an error message here if needed
           },
           orElse: () {
@@ -50,9 +45,8 @@ class SpecializationBlocBuilder extends StatelessWidget {
     );
   }
 
-  Widget setupSuccess(specializationDataList) {
-    return SpecialityListView(
-        specializationData: specializationDataList ?? []);
+  Widget setupSuccess(doctors) {
+    return DoctorListView(doctors: doctors ?? []);
   }
 
   Widget setupError() {
