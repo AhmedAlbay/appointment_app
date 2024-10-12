@@ -39,6 +39,6 @@ emit( LoginState.success(loginResponse),);
 }
 
    Future <void> saveUserToken(String token) async{
-    await SharedPrefHelper.setData(SharedPreKey.userToken, token);
+    await SharedPrefHelper.setSecuredString(SharedPreKey.userToken, token);
     DioFactory.setTokenAfterLogin(token);
 }
