@@ -1,5 +1,6 @@
 import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_text.dart';
-import 'package:appointment_app/features/home/ui/widgets/get_doctor_specialization_bloc_builder.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctor_list/doctors_bloc_builder.dart';
+import 'package:appointment_app/features/home/ui/widgets/specializations_list/specialization_bloc_builder.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_blue_container.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,9 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 24.h),
               DoctorSpecialityText(),
               SizedBox(height: 16.h),
-              GetDoctorSpecializationBlocBuilder(),
+              SpecializationBlocBuilder(),
+              SizedBox(height: 16.h),
+              DoctorsBlocBuilder(),
             ],
           ),
         ),

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class DoctorSpecializationListViewItem extends StatelessWidget {
-  const DoctorSpecializationListViewItem({super.key, required this.specializationData, required this.itemIndex});
+class SpecializationListViewItem extends StatelessWidget {
+  const SpecializationListViewItem({super.key, required this.specializationData, required this.itemIndex, required this.selectIndex});
 final SpecializationData  specializationData;
 final int itemIndex ;
-
+final int selectIndex ;
   @override
   Widget build(BuildContext context) {
      return Padding(
@@ -18,10 +18,30 @@ final int itemIndex ;
             ),
             child: Column(
               children: [
-                CircleAvatar(
+            itemIndex ==selectIndex ?
+             Container(
+              decoration: BoxDecoration(
+                border: Border.all(  color:   ColorManager.darkBlue) ,
+                shape: BoxShape.circle ,
+              ),
+              child: CircleAvatar(
+                 radius: 24,
+                  backgroundColor: ColorManager.greyblur,
+                  child: SvgPicture.asset(
+                    "assets/svgs/notification.svg",
+                    fit: BoxFit.cover,
+                    height: 42.h,
+                    width: 42.w,
+                  ),
+              ),
+             )
+
+            :    CircleAvatar(
                   radius: 24,
                   backgroundColor: ColorManager.greyblur,
                   child: SvgPicture.asset(
+                      height: 40.h,
+                    width: 42.h,
                     "assets/svgs/notification.svg",
                     fit: BoxFit.cover,
                   ),
@@ -29,7 +49,10 @@ final int itemIndex ;
                 SizedBox(height: 10.h),
                 Text(
                   specializationData.name ?? "Doctor",
-                  style: TextStyles.font12greyRegular,
+                    style:
+                    itemIndex == selectIndex ? TextStyles.font14DarkBlueBold :
+                    
+                     TextStyles.font12greyRegular,
                 ),
               ],
             ),
